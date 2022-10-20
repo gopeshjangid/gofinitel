@@ -1,10 +1,13 @@
 import React from "react";
-import { Route, Routes as Switch } from "react-router-dom";
+import { Route, Routes as Switch, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
+import Dashboard from "../pages/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
+import { useKeycloak } from "@react-keycloak/web";
 
 const routes = {
 	"/": { exact: true, element: Home },
+	"/dashboard": { exact: true, element: Dashboard, auth: true },
 };
 
 function Routes() {
@@ -12,7 +15,7 @@ function Routes() {
 
 	return (
 		<Switch>
-			{routePaths.map((path, index) => {
+			{/* {routePaths.map((path, index) => {
 				const route = routes[path];
 				const isObj = typeof route !== "function";
 				const props = isObj ? route : { element: true };
@@ -24,22 +27,21 @@ function Routes() {
 					);
 				}
 
-				if (route?.auth) {
-					return (
-						<Route
-							key={path}
-							path={path}
-							element={
-								<PrivateRoutes>
-									<PrivateComponent />
-								</PrivateRoutes>
-							}
-						/>
-					);
-				}
-
-				return <Route key={path} path={path} element={<PrivateComponent />} />;
-			})}
+				// if (route?.auth) {
+				// 	return (
+				// 		<Route
+				// 			key={path}
+				// 			path={path}
+				// 			element={
+				// 				<PrivateRoutes>
+				// 					<PrivateComponent />
+				// 				</PrivateRoutes>
+				// 			}
+				// 		/>
+				// 	);
+				// } */}
+			<Route path={"/"} element={<Home />} />;
+			<Route path={"/dashboard"} exact element={<Dashboard />} />;{/* })} */}
 		</Switch>
 	);
 }

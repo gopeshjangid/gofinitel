@@ -5,12 +5,11 @@ import AuthContext from "../context/AuthProvideContext";
 function PrivateRoutes({ children }) {
 	const authContext = useContext(AuthContext);
 
-	// Show the loading spinner while the user is not authenticated
 	if (!authContext.isAuthenticated) {
 		return <Navigate to="/" />;
-	} else {
-		return children;
 	}
+
+	return children;
 }
 
 export default PrivateRoutes;
