@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import HeaderBgImg from "../../assets/public/goFintel.svg";
+import React from 'react';
+import HeaderComponent from './Header';
+// import HeaderBgImg from "../../assets/public/goFintel.svg";
 
-function Home() {
-	useEffect(() => {
-		document.title = "Log in to goTravel";
-	}, []);
-	return (
-		<div>
-			<div className="home-header">Dashboard</div>
-		</div>
-	);
+function Dashboard() {
+  return (
+    <div>
+      <div className='header'>
+        <HeaderComponent/>
+      </div>
+    </div>
+  )
 }
 
-export default Home;
+export default Dashboard

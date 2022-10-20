@@ -7,7 +7,7 @@ import { useKeycloak } from "@react-keycloak/web";
 
 const routes = {
 	"/": { exact: true, element: Home },
-	"/dashboard": { exact: true, element: Dashboard, auth: true },
+	"/dashboard": { exact: true, element: Dashboard},
 };
 
 function Routes() {
