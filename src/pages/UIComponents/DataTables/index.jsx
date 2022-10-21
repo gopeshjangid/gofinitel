@@ -177,14 +177,6 @@ const DataTableComponent = () => {
         )
     }
 
-    const representativeRowFilterTemplate = (options) => {
-        return <MultiSelect value={options.value} options={representatives} itemTemplate={representativesItemTemplate} onChange={(e) => options.filterApplyCallback(e.value)} optionLabel="name" placeholder="Any" className="p-column-filter" maxSelectedLabels={1} />;
-    }
-
-    const statusRowFilterTemplate = (options) => {
-        return <Dropdown value={options.value} options={statuses} onChange={(e) => options.filterApplyCallback(e.value)} itemTemplate={statusItemTemplate} placeholder="Select a Status" className="p-column-filter" showClear />;
-    }
-
     const actionBodyTemplate = () => {
         return <Button type="button" icon="pi pi-cog"></Button>;
     }

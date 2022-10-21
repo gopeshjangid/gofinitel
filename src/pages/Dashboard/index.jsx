@@ -11,7 +11,7 @@ function Dashboard() {
       <div className='header'>
         {/* <BreadCrumbComponent/> */}
         {/* <MenubarComponent/> */}
-        {/* <ToastComponent/> */}
+        <ToastComponent/>
         <DataTableComponent/>
       </div>
     </div>

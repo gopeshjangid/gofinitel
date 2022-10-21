@@ -11,8 +11,6 @@ import './style.css';
 const ToastComponent = () => {
     const toast = useRef(null);
     const toastTL = useRef(null);
-    const toastBL = useRef(null);
-    const toastBR = useRef(null);
     const toastBC = useRef(null);
 
     const showSuccess = () => {
@@ -29,10 +27,6 @@ const ToastComponent = () => {
 
     const showError = () => {
         toast.current.show({severity:'error', summary: 'Error Message', detail:'Message Content', life: 3000});
-    }
-
-    const showTopLeft = () => {
-        toastTL.current.show({severity: 'info', summary: 'Info Message', detail: 'Message Content', life: 3000});
     }
 
     const showConfirm = () => {
@@ -53,18 +47,6 @@ const ToastComponent = () => {
                 </div>
             </div>
         ) });
-    }
-
-    const showMultiple = () => {
-        toast.current.show([
-            {severity:'info', summary:'Message 1', detail:'Message 1 Content', life: 3000},
-            {severity:'info', summary:'Message 2', detail:'Message 2 Content', life: 3000},
-            {severity:'info', summary:'Message 3', detail:'Message 3 Content', life: 3000}
-        ]);
-    }
-
-    const clear = () => {
-        toast.current.clear();
     }
 
     return (
