@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div>
       <div className='header'>
-        ultima theme changes
+        ultima theme
       </div>
     </div>
   )
