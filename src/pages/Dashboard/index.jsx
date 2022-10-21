@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div>
       <div className='header'>
-        <HeaderComponent/>
+        ultima theme
       </div>
     </div>
   )
