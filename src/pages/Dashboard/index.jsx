@@ -3,7 +3,7 @@ import HeaderBgImg from "../../assets/public/goFintel.svg";
 
 function Home() {
 	useEffect(() => {
-		document.title = "Log in to goTravel";
+		document.title = "Log in to goTravel...";
 	}, []);
 	return (
 		<div>
