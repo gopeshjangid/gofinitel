@@ -7,9 +7,9 @@ function App() {
 	const authContext = useContext(AuthContext);
 
 	// Show the loading spinner while the user is not authenticated
-	if (!authContext.isAuthenticated) {
-		return "loading...";
-	}
+	// if (!authContext.isAuthenticated) {
+	// 	return "loading...";
+	// }
 	// If the user is authenticated display the home component
 	// else {
 	//   return <Home />;

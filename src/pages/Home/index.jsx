@@ -16,7 +16,7 @@ function Home() {
 				</div>
 			</header>
 			<main>
-				<div>You are already logegd in</div>
+				<div style={{color:"white"}}>You are already logegd in</div>
 			</main>
 		</div>
 	);
