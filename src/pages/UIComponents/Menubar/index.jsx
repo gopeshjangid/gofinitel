@@ -7,12 +7,12 @@ import './style.css';
 import React from 'react';
 import { Menubar } from 'primereact/menubar';
 
-const MenubarComponent = ({items, start, end}) => {
+const MenubarComponent = ({headerItems, start, end}) => {
 
     return (
         <div>
             <div className="card">
-                <Menubar model={items} start={start} end={end} />
+                <Menubar model={headerItems} start={start} end={end} />
             </div>
         </div>
     );
