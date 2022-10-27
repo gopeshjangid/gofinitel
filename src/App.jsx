@@ -1,27 +1,19 @@
 import { useContext } from "react";
-import { AuthContext } from "./context/AuthContextProvider";
+import { Route, Routes as Switch, BrowserRouter, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import { Route, Routes as Switch, BrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./Routes";
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
 function App() {
-	const authContext = useContext(AuthContext);
-
-	// Show the loading spinner while the user is not authenticated
-	// if (!authContext.isAuthenticated) {
-	// 	return "loading...";
-	// }
-	// If the user is authenticated display the home component
-	// else {
-	//   return <Home />;
-	// }
-
+	
 	return (
-		<BrowserRouter>
 			<Switch>
 				<Route path={"/"} exact element={<Home />} />;
-				<Route path={"/dashboard"} exact element={<Dashboard />} />
+				<Route path={"/dashboard"} exact element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
 			</Switch>
-		</BrowserRouter>
 	);
 }
 
