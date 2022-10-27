@@ -4,7 +4,6 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-import './style.css';
 
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -20,6 +19,8 @@ const DataTableComponent = ({
     dataTableHeaderTitle="",
     globalFilterValue,
     onGlobalFilterChange,
+    exportConfig={},
+    selectionModeToBeShown=false,
     rowsPerPageOptions}) => {
     const dt = useRef(null);
     const [selectedCustomers, setSelectedCustomers] = useState(null);
@@ -28,14 +29,7 @@ const DataTableComponent = ({
         return filterFields.push(el.field)
     })
 
-    const cols = [
-        { field: 'code', header: 'Code' },
-        { field: 'name', header: 'Name' },
-        { field: 'category', header: 'Category' },
-        { field: 'quantity', header: 'Quantity' }
-    ];
-
-    const exportColumns = cols.map(col => ({ title: col.header, dataKey: col.field }));
+    const exportColumns = exportConfig?.columnsToBeExported?.map(col => ({ title: col.header, dataKey: col.field }));
 
     const exportCSV = (selectionOnly) => {
         dt.current.exportCSV({ selectionOnly });
@@ -106,7 +100,7 @@ const DataTableComponent = ({
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" selection={selectedCustomers} 
                 onSelectionChange={e => setSelectedCustomers(e.value)} globalFilterFields={filterFields} filters={filters}
                 >
-                <Column selectionMode="multiple" selectionAriaLabel="name" headerStyle={{ width: '3em' }}></Column>
+                {selectionModeToBeShown && <Column selectionMode="multiple" selectionAriaLabel="name" headerStyle={{ width: '3em' }}></Column>}
                 {dynamicColumns}
             </DataTable>
         </div>

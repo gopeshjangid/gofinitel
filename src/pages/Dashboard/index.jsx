@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BreadCrumbComponent from '../UIComponents/Breadcrum';
-import DataTableComponent from '../UIComponents/DataTables';
-import MenubarComponent from '../UIComponents/Menubar';
-import ToastComponent from '../UIComponents/Toast';
+
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { InputText } from 'primereact/inputtext';
 import { Dropdown } from 'primereact/dropdown';
@@ -12,6 +9,11 @@ import { ProgressBar } from 'primereact/progressbar';
 import { Calendar } from 'primereact/calendar';
 import { MultiSelect } from 'primereact/multiselect';
 import { Slider } from 'primereact/slider';
+
+import BreadCrumbComponent from '../UIComponents/Breadcrum';
+import DataTableComponent from '../UIComponents/DataTables';
+import MenubarComponent from '../UIComponents/Menubar';
+import ToastComponent from '../UIComponents/Toast';
 import { CustomerService } from '../../services/CustomerService';
 
 import HeaderBgImg from "./../../assets/public/logo/goFintel.svg";
@@ -125,6 +127,7 @@ function Dashboard() {
     const [customers, setCustomers] = useState(null);
     const [selectedCustomers, setSelectedCustomers] = useState(null);
     const [filters, setFilters] = useState({
+		'global': { value: null, matchMode: FilterMatchMode.CONTAINS },
         'code': { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
         'name': { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
         'category': { operator: FilterOperator.AND, constraints: [{ value: null, matchMode: FilterMatchMode.STARTS_WITH }] },
@@ -132,7 +135,6 @@ function Dashboard() {
     });
     const [globalFilterValue, setGlobalFilterValue] = useState('');
     const [loading, setLoading] = useState(true);
-
     const dataTableList = [
         {"id": "1000","code": "f230fh0g3","name": "Bamboo Watch","description": "Product Description","image": "bamboo-watch.jpg","price": 65,"category": "Accessories","quantity": 24,"inventoryStatus": "INSTOCK","rating": 5},
         {"id": "1001","code": "nvklal433","name": "Black Watch","description": "Product Description","image": "black-watch.jpg","price": 72,"category": "Accessories","quantity": 61,"inventoryStatus": "INSTOCK","rating": 4},
@@ -145,14 +147,18 @@ function Dashboard() {
         {"id": "1008","code": "vbb124btr","name": "Game Controller","description": "Product Description","image": "game-controller.jpg","price": 99,"category": "Electronics","quantity": 2,"inventoryStatus": "LOWSTOCK","rating": 4},
         {"id": "1009","code": "cm230f032","name": "Gaming Set","description": "Product Description","image": "gaming-set.jpg","price": 299,"category": "Electronics","quantity": 63,"inventoryStatus": "INSTOCK","rating": 3}
     ];
-
     const dataTableHeaderList = [
         {field: 'code', header: 'Code', sortable:true, filter:true, headerStyle: { minWidth: '14rem' }, filterPlaceholder:"Search by code"},
         {field: 'name', header: 'Name', sortable:true, filter:true, headerStyle: { minWidth: '14rem' }, filterPlaceholder:"Search by name"},
         {field: 'category', header: 'Category', sortable:true, filter:true, headerStyle: { minWidth: '6rem' }, filterPlaceholder:"Search by category"},
         {field: 'quantity', header: 'Quantity', sortable:true, filter:true, headerStyle: { minWidth: '6rem' }, filterPlaceholder:"Search by quantity"}
     ];
-
+	const cols = [
+        { field: 'code', header: 'Code' },
+        { field: 'name', header: 'Name' },
+        { field: 'category', header: 'Category' },
+        { field: 'quantity', header: 'Quantity' }
+    ];
     const customerService = new CustomerService();
 
     useEffect(() => {
@@ -169,7 +175,7 @@ function Dashboard() {
     const onGlobalFilterChange = (e) => {
         const value = e.target.value;
         let _filters = { ...filters };
-        // _filters['global'].value = value;
+        _filters['global'].value = value;
         setFilters(_filters);
         setGlobalFilterValue(value);
     }
@@ -188,6 +194,10 @@ function Dashboard() {
             dataTableHeaderList={dataTableHeaderList}
             loading={loading}
             filters={filters}
+			exportConfig={{
+				columnsToBeExported:cols
+			}}
+			selectionModeToBeShown={true}
             globalFilterValue={globalFilterValue}
             onGlobalFilterChange={onGlobalFilterChange}
             rowsPerPageOptions={rowsPerPageOptions}
