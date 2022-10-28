@@ -17,6 +17,7 @@ import ToastComponent from '../UIComponents/Toast';
 import { CustomerService } from '../../services/CustomerService';
 
 import HeaderBgImg from "./../../assets/public/logo/goFintel.svg";
+import SidebarMenuList from '../UIComponents/SidebarMenuList';
 
 function Dashboard() {
     const rowsPerPageOptions = [10,25,50];
@@ -125,6 +126,7 @@ function Dashboard() {
     const end = <InputText placeholder="Search" type="text" />;
 
     const [customers, setCustomers] = useState(null);
+    const [menuList, setMenuList] = useState(null);
     const [selectedCustomers, setSelectedCustomers] = useState(null);
     const [filters, setFilters] = useState({
 		'global': { value: null, matchMode: FilterMatchMode.CONTAINS },
@@ -163,6 +165,10 @@ function Dashboard() {
 
     useEffect(() => {
         customerService.getCustomersLarge().then(data => { setCustomers(getCustomers(data)); setLoading(false) });
+        customerService.getSideBarMenuList().then(data => { 
+            setMenuList(data); 
+            setLoading(false) 
+        });
     }, []);
 
     const getCustomers = (data) => {
@@ -202,6 +208,7 @@ function Dashboard() {
             onGlobalFilterChange={onGlobalFilterChange}
             rowsPerPageOptions={rowsPerPageOptions}
             />
+        <SidebarMenuList menuList={menuList}/>
       </div>
     </div>
   )

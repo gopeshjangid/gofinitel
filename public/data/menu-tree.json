@@ -1,0 +1,259 @@
+[
+    {
+        "label": "Reports",
+        "items": [
+            {
+                "label": "Latest reports",
+                "rule": "/api/rules/table/getLatestReports",
+                "viewType": "table",
+                "fixedParams": {
+                    "limit": "20",
+                    "locale": "en"
+                }
+            },
+            {
+                "label": "Search report",
+                "rule": "/api/rules/table/searchReport",
+                "viewType": "table",
+                "fixedParams": {
+                    "locale": "en"
+                },
+                "params": {
+                    "reportingEntityName": {
+                        "type": "autocomplete",
+                        "typeParams": {
+                            "property": "name",
+                            "limit": 5,
+                            "values": [
+                                "name"
+                            ]
+                        },
+                        "valueLabel": "name",
+                        "valueKey": "name",
+                        "typeUrl": "api/rules/autocomplete/reportingEntity",
+                        "key": "reportingEntityName",
+                        "keyLabel": "Reporting entity name"
+                    },
+                    "reportCode": {
+                        "type": "multiEnum",
+                        "typeKey": "reportCode",
+                        "key": "reportCode",
+                        "keyLabel": "Report type"
+                    },
+                    "submissionDateFrom": {
+                        "type": "date",
+                        "key": "submissionDateFrom",
+                        "keyLabel": "Submission date from"
+                    },
+                    "submissionDateTo": {
+                        "type": "date",
+                        "key": "submissionDateTo",
+                        "keyLabel": "Submission date to"
+                    },
+                    "reportIndicators": {
+                        "type": "multiEnum",
+                        "typeKey": "reportIndicators",
+                        "key": "reportIndicators",
+                        "keyLabel": "Indicators"
+                    },
+                    "reason": {
+                        "type": "string",
+                        "key": "reason",
+                        "keyLabel": "Reason"
+                    }
+                }
+            },
+            {
+                "label": "Show report",
+                "rule": "/api/rules/graph/getReportById",
+                "viewType": "graph",
+                "fixedParams": {
+                    "locale": "en"
+                },
+                "params": {
+                    "reportId": {
+                        "key": "reportId",
+                        "type": "string",
+                        "keyLabel": "Report id"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "label": "Reporting entities",
+        "items": [
+            {
+                "label": "Search contact person",
+                "rule": "/api/rules/table/searchContactPerson",
+                "viewType": "table",
+                "fixedParams": {
+                    "locale": "en"
+                },
+                "params": {
+                    "reportingEntity": {
+                        "type": "string",
+                        "key": "reportingEntityName",
+                        "keyLabel": "Reporting entity name"
+                    },
+                    "submissionDateFrom": {
+                        "type": "date",
+                        "key": "submissionDateFrom",
+                        "keyLabel": "Submission date from"
+                    },
+                    "submissionDateTo": {
+                        "type": "date",
+                        "key": "submissionDateTo",
+                        "keyLabel": "Submission date to"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "label": "Transactions"
+    },
+    {
+        "label": "Persons",
+        "items": [
+            {
+                "label": "Search person",
+                "rule": "/api/rules/table/searchPerson",
+                "viewType": "table",
+                "fixedParams": {
+                    "locale": "en"
+                },
+                "params": {
+                    "firstName": {
+                        "type": "string",
+                        "key": "firstName",
+                        "keyLabel": "First name"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "key": "lastName",
+                        "keyLabel": "Last name"
+                    },
+                    "fullName": {
+                        "type": "string",
+                        "key": "fullName",
+                        "keyLabel": "Full name"
+                    },
+                    "birthDate": {
+                        "type": "date",
+                        "key": "birthDate",
+                        "keyLabel": "Birth date"
+                    },
+                    "nationality": {
+                        "type": "enum",
+                        "typeKey": "nationality",
+                        "key": "nationality",
+                        "keyLabel": "Nationality"
+                    },
+                    "address": {
+                        "type": "string",
+                        "key": "address",
+                        "keyLabel": "Address"
+                    },
+                    "houseNumber": {
+                        "type": "string",
+                        "key": "houseNumber",
+                        "keyLabel": "House number"
+                    },
+                    "city": {
+                        "type": "string",
+                        "key": "city",
+                        "keyLabel": "City"
+                    },
+                    "zip": {
+                        "type": "string",
+                        "key": "zip",
+                        "keyLabel": "ZIP"
+                    },
+                    "countryCode": {
+                        "type": "enum",
+                        "typeKey": "countryCode",
+                        "key": "countryCode",
+                        "keyLabel": "Country"
+                    },
+                    "isDirector": {
+                        "type": "boolean",
+                        "typeKey": "boolean",
+                        "key": "isDirector",
+                        "keyLabel": "Is director?"
+                    },
+                    "directorOf": {
+                        "type": "string",
+                        "key": "directorOf",
+                        "keyLabel": "Director of"
+                    },
+                    "accountAt": {
+                        "type": "string",
+                        "key": "accountAt",
+                        "keyLabel": "Account at"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "label": "Entities (companies)"
+    },
+    {
+        "label": "Financial products",
+        "items": [
+            {
+                "label": "Bank accounts"
+            },
+            {
+                "label": "Creditcards"
+            },
+            {
+                "label": "Crypto wallets"
+            },
+            {
+                "label": "Play accounts"
+            }
+        ]
+    },
+    {
+        "label": "Objects",
+        "items": [
+            {
+                "label": "Emails"
+            },
+            {
+                "label": "Telephone numbers"
+            },
+            {
+                "label": "Addresses"
+            },
+            {
+                "label": "IP Addresses"
+            },
+            {
+                "label": "Identification documents"
+            }
+        ]
+    },
+    {
+        "label": "Valueables",
+        "items": [
+            {
+                "label": "Cars"
+            },
+            {
+                "label": "Boats"
+            },
+            {
+                "label": "Watches"
+            },
+            {
+                "label": "Properties"
+            },
+            {
+                "label": "Other"
+            }
+        ]
+    }
+]
