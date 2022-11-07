@@ -1,10 +1,6 @@
 import React,{useContext} from "react";
-import { Navigate } from "react-router-dom";
-import Home from "../pages/Home";
-import Dashboard from "../pages/Dashboard";
-import { useKeycloak } from "@react-keycloak/web";
 import { AuthContext } from "../context/AuthContextProvider";
-import Loader from "../pages/UIComponents/Loading";
+import Loader from "../components/Loading";
 
 function Routes({children}) {
 	const authContext = useContext(AuthContext);

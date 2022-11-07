@@ -1,0 +1,336 @@
+{
+	"cols": [
+		{
+			"field": "reportId.value",
+			"header": "Report \"id\"",
+			"format": null,
+			"link": null
+		},
+		{
+			"field": "submissionDate.value",
+			"header": "Submission date and time",
+			"format": "datetime",
+			"link": null
+		},
+		{
+			"field": "reportCode.valueLabel",
+			"header": "Type of report",
+			"format": null,
+			"link": null
+		},
+		{
+			"field": "submissionCode.valueLabel",
+			"header": "Type of submission",
+			"format": null,
+			"link": null
+		},
+		{
+			"field": "entityName.value",
+			"header": "Entity name",
+			"format": null,
+			"link": null
+		},
+		{
+			"field": "entityBranch.value",
+			"header": "Reporting entity branch",
+			"format": null,
+			"link": null
+		},
+		{
+			"field": null,
+			"header": null,
+			"format": null,
+			"link": {
+				"view": "graph",
+				"value": "-->",
+				"rule": "api/rules/graph/getReportById",
+				"params": {
+					"reportId": "reportId.value"
+				}
+			}
+		}
+	],
+	"actions": [],
+	"data": [
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Sell_shares_company"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": "NL Sample 12345"
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": null
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1648714394000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Buy-sell_house"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": "NL Sample 12345"
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": null
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1648547838000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Creditcard_payment"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": "ICS"
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1646666431000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Bank_transfer_through_PSP"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": null
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1646320831000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Ending_client_relationship"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": "Branche name"
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1633046400000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Deposit_play_account-creditcard"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": "Branche name"
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1633046400000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Bet_game_of_chance"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": "Branche name"
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1633046400000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Wire_transfer-2"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": "NL Sample 12345"
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": null
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1631028031000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Wire_transfer-1"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": null
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1631028031000
+			}
+		},
+		{
+			"reportId": {
+				"key": "reportId",
+				"value": "Customs"
+			},
+			"submissionCode": {
+				"key": "submissionCode",
+				"value": "E",
+				"valueLabel": "Electronic"
+			},
+			"entityName": {
+				"key": "entityName",
+				"value": null
+			},
+			"reportCode": {
+				"key": "reportCode",
+				"value": "UTR",
+				"valueLabel": "Unusual Transaction Report"
+			},
+			"entityBranch": {
+				"key": "entityBranch",
+				"value": "Luchthaven Schiphol passagiers"
+			},
+			"submissionDate": {
+				"key": "submissionDate",
+				"value": 1620777600000
+			}
+		}
+	]
+}

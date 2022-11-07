@@ -1,0 +1,16 @@
+.form-field {
+    width: 20rem;
+    height: 4rem;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 490px;
+    width: 25rem;
+}
+
+.submit-button {
+    width: auto !important;
+}

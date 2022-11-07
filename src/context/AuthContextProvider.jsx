@@ -6,7 +6,7 @@ import { createContext, useEffect, useState } from "react";
  */
 const keycloakConfig = {
 	realm: "goTravel",
-	clientId: "react-web-app",
+	clientId: "react-webapp",
 	url: "http://localhost:8082/auth",
 };
 

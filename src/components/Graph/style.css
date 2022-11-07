@@ -1,0 +1,12 @@
+.graph-filter-dropdown .p-dropdown {
+	width: 12rem;
+}
+
+.graph-filter-dropdown .country-item-value img.flag {
+	width: 17px;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+}

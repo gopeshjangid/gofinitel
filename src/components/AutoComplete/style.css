@@ -1,0 +1,15 @@
+.autocomplete-wrapper {
+    position: relative !important;
+}
+
+.autocomplete-wrapper label {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    z-index: 2;
+    font-size: .65rem;
+}
+
+.focused {
+    top: 0px !important;
+}

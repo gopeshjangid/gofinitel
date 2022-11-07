@@ -1,0 +1,39 @@
+.p-inputwrapper {
+	border: 0px !important;
+	border-bottom: 2px solid #ced4da !important;
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+		box-shadow 0.2s;
+	border-radius: 1px !important;
+	width: 100%;
+	background-color: #f1f1f1;
+}
+
+.dropdown-container {
+	position: relative;
+
+}
+
+.dropdown-container label {
+	position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    z-index: 2;
+    font-size: .65rem;
+}
+.dropdown-focus label:focus {
+	top: .75rem !important;
+}
+
+.p-dropdown-panel {
+	width: 320px;
+	left: 108px !important;
+}
+
+.p-dropdown-items {
+	overflow-x: auto;
+	max-width: 320px;
+}
+
+.focus {
+	 top: 0px !important;
+}

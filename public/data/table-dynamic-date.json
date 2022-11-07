@@ -1,0 +1,86 @@
+{
+    "cols": [
+        {
+            "field": "firstName.value",
+            "header": "First name",
+            "format": null,
+            "link": null
+        },
+        {
+            "field": "lastName.value",
+            "header": "Last name",
+            "format": null,
+            "link": null
+        },
+        {
+            "field": "fullName.value",
+            "header": "Full name",
+            "format": null,
+            "link": null
+        },
+        {
+            "field": "birthDate.value",
+            "header": "Birth date",
+            "format": "datetime",
+            "link": null
+        },
+        {
+            "field": "virtual.valueLabel",
+            "header": "Virtual node",
+            "format": null,
+            "link": null
+        },
+        {
+            "field": null,
+            "header": null,
+            "format": null,
+            "link": {
+                "view": "graph",
+                "value": "-->",
+                "rule": "api/rules/graph/getNodes",
+                "params": {
+                    "entityIds": "[entityId.value]"
+                }
+            }
+        }
+    ],
+    "actions": [
+        {
+            "view": "graph",
+            "label": "Show on graph",
+            "rule": "api/rules/graph/getNodes",
+            "params": {
+                "entityIds": "[entityId.value]"
+            }
+        }
+    ],
+    "data": [
+        {
+            "firstName": {
+                "key": "firstName",
+                "value": "Jan"
+            },
+            "lastName": {
+                "key": "lastName",
+                "value": "Koper"
+            },
+            "virtual": {
+                "key": "virtual",
+                "value": null,
+                "valueLabel": "Unspecified"
+            },
+            "fullName": {
+                "key": "fullName",
+                "value": null
+            },
+            "entityId": {
+                "key": "entityId",
+                "value": "01c1ebf5-4325-41ae-8ef1-11c894a301eb"
+            },
+            "birthDate": {
+                "key": "birthDate",
+                "value": 1003795200000
+            }
+        }
+    ]
+}
